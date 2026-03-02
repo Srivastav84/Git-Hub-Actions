@@ -2,8 +2,8 @@
 name: Hello
 #runs on trigger
 on: 
-  push:
-    branches: [main]
+#to be run only when asked to run.
+   workflow_dispatch:
 #these are jobs inside the workflows
 jobs: 
 
