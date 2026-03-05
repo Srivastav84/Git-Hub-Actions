@@ -1,9 +1,12 @@
 #This is workflow name
 name: Hello
 #runs on trigger
-on: 
-#to be run only when asked to run.
-   workflow_dispatch:
+on:
+  push:
+      branches: [main]
+
+      paths:
+         - '**.html'
 #these are jobs inside the workflows
 jobs: 
 
