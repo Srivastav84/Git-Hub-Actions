@@ -5,11 +5,19 @@ name: CICD_2
 # Manual click (deliver) workflow whenever user needs
 
 on:
-  push:
-      branches: [main]
-
-      paths:
-         - '**.html'
+   workflow_dispatch:
+      inputs:
+        environment:
+           description: This is the environment value where this workflow runs.
+           default: 'dev'
+           required: true
+           type: choice
+           options:
+              - prod
+              - pat
+              - sit
+              - dev
+              
 
   
 jobs:
