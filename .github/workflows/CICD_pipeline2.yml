@@ -21,35 +21,24 @@ on:
 
   
 jobs:
-
   code:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: checkout code
-
         run: echo "COde Clone from GitHub"
 
   build:
     needs: [code]
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Build Docker Container
-
         run: echo "Docker Container build"
 
   test:
     needs: [ build , code]
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Test the container
-
         run: echo "Testing the container"
 
         
@@ -58,9 +47,6 @@ jobs:
     if: inputs.environment == 'dev' 
     needs: [ build , test , code]
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Deploying the app
-
         run: echo "Docker compose deployed the app"
