@@ -29,4 +29,3 @@ jobs:
                     ${{vars.USER_DOCKERHUB}}/github-actions-app:latest
                     ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.sha}}
 
-                    "Priyam_TWS/github-actions-app:latest"
