@@ -25,8 +25,8 @@ jobs:
                 context: .
                 push: true
                 tags: |
-                    ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.GITHUB_HEAD_REF}}
+                    ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.ref}}
                     ${{vars.USER_DOCKERHUB}}/github-actions-app$:latest
-                    ${{vars.USER_DOCKERHUB}}/github-actions-app$:${{github.SITHUB_SHA}}
+                    ${{vars.USER_DOCKERHUB}}/github-actions-app$:${{github.sha}}
 
                     "Priyam_TWS/github-actions-app:latest"
