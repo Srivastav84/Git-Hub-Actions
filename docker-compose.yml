@@ -1,0 +1,6 @@
+services:
+  
+  web:
+    image: ${{ USER_DOCKERHUB }}/github-actions-app:latest
+    ports:
+       - "80:80"
