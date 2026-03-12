@@ -5,6 +5,7 @@ on:
 
 jobs:
     environment:
+        USER_DOCKERHUB: ${{ vars.USER_DOCKERHUB }}
         
     deploy:
         runs-on: self-hosted
