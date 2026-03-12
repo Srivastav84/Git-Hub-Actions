@@ -3,11 +3,11 @@ name: Deploy_Flask_App
 on:
     workflow_dispatch:
 
-jobs:
-    environment:
-        USER_DOCKERHUB: ${{ vars.USER_DOCKERHUB }}
-        
+jobs:   
     deploy:
+        env:
+            DOCKERHUB_USERNAME : ${{ vars.USER_DOCKERHUB }}
+
         runs-on: self-hosted
 
         steps:
