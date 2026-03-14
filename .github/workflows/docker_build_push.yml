@@ -3,7 +3,8 @@ name: Docker Build_push
 on:
     #  push:
     #      branches: [main]
-    workflow_dispatch:
+    # workflow_dispatch:
+      workflow_call:
 
 jobs:
     build-and-push:
