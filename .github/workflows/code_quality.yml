@@ -7,12 +7,12 @@ on:
 
 jobs:
     validate:
-     runs-on: ubuntu-latest
-     strategy:
+      runs-on: ubuntu-latest
+      strategy:
             fail-fast: false # even if one version installation fails dont stop complete all the other task you initiated
             matrix:
                 python-version: ["3.11", "3.12", "3.13"]
-        steps:
+      steps:
             - name: checkout code
               uses: actions/checkout@v4
 
