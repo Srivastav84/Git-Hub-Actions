@@ -18,5 +18,5 @@ jobs:
              - name: Run Trivy Scan
                uses: aquasecurity/trivy-action@0.35.0
                with:
-                image-ref: github-actions-app:${{ github.sha }}
+                image-ref: ${{vars.USER_DOCKERHUB}}/github-actions-app:${{ github.sha }}
                 format: table
