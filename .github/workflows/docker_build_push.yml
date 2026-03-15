@@ -29,4 +29,4 @@ jobs:
                 tags: |
                     ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.ref_name}}
                     ${{vars.USER_DOCKERHUB}}/github-actions-app:latest
-                    ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.sha}} .
+                    ${{vars.USER_DOCKERHUB}}/github-actions-app:${{github.sha}}
