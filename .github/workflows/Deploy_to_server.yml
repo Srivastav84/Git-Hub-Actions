@@ -8,7 +8,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         env:
-            DOCKERHUB_USER: ${{ vars. DOCKERHUB_USER }}
+            DOCKERHUB_USER: ${{vars.USER_DOCKERHUB}}
             DOCKER_TAG: ${{ github.sha }}
         steps:
             - name: Checkout code
@@ -43,7 +43,7 @@ jobs:
                   key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                   script: |
                     echo "Running App"
-                    export DOCKERHUB_USER=${{ vars.DOCKERHUB_USER }}
+                    export DOCKERHUB_USER=${{vars.USER_DOCKERHUB}}
                     export DOCKER_TAG=${{ github.sha }}
-                    echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ vars.DOCKERHUB_USER }} --password-stdin
+                    echo ${{secrets.USER_DOCKERHUB_TOKEN}} | docker login --username ${{vars.USER_DOCKERHUB}} --password-stdin
                     cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always
