@@ -24,6 +24,9 @@ jobs:
                 host: ${{ secrets.EC2_SSH_HOST }}
                 username: ${{ secrets.EC2_SSH_USER }}
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+                port: 22
+                timeout: 30s              # Increase timeout (default is often 10s)
+                command_timeout: 10m      # Increase command timeout
                 script:
                     echo "installing required packages and folder"
                     sudo apt-get update
